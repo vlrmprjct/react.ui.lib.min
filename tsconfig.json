@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": [
+            "ESNext",
+            "ES2017",
+            "ES7",
+            "ES6",
+            "DOM"
+        ],
+        "strict": true,
+        "strictNullChecks": true,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "baseUrl": "./",
+        "outDir": "./dist",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "sourceMap": false,
+        "declaration": true,
+        "noEmitOnError": true,
+        "jsx": "react-jsx"
+    },
+    "include": [
+        "src/*.ts",
+        "src/*.tsx"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "**/*.spec.*",
+    ],
+}
