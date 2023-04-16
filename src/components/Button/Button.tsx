@@ -1,53 +1,48 @@
-import React, { ElementType, MouseEventHandler, ReactNode } from 'react';
+import React from 'react';
 import './Button.scss';
 
-
-export type ButtonType = 'default' | 'danger' | 'ghost' | 'secondary';
-
-interface BaseButtonProps {
-    type?: ButtonType;
-    size?: 'default';
-    className?: string;
-    children?: ReactNode;
-    disabled?: boolean;
-    loading?: boolean;
+interface ButtonProps {
+    /**
+     * Is this the principal call to action on the page?
+     */
+    primary?: boolean;
+    /**
+     * What background color to use
+     */
+    backgroundColor?: string;
+    /**
+     * How large should the button be?
+     */
+    size?: 'small' | 'medium' | 'large';
+    /**
+     * Button contents
+     */
+    label: string;
+    /**
+     * Optional click handler
+     */
+    onClick?: () => void;
 }
 
-type HTMLButtonProps = {
-    onClick?: MouseEventHandler<HTMLButtonElement>;
-} & BaseButtonProps;
-
 /**
- * If href is supplied, button becomes an anchor link
+ * Primary UI component for user interaction
  */
-type HTMLAnchorProps = {
-    href?: string;
-} & BaseButtonProps;
-
-/**
- * If `as` is supplied, button becomes a custom html node specified in `as`
- */
-type CustomNodeProps = {
-    as?: ElementType;
-    to?: string;
-} & BaseButtonProps;
-
-export type ButtonProps = HTMLButtonProps & HTMLAnchorProps & CustomNodeProps;
-
-const Button: React.ForwardRefRenderFunction<unknown, ButtonProps> = props => {
-    const { size = 'default', className, children, disabled = false, loading, onClick } = props;
-
-    const styles = {
-        size,
-        disabled,
-        withText: children != null,
-    };
-
+export const Button = ({
+    primary = false,
+    size = 'medium',
+    backgroundColor,
+    label,
+    ...props
+}: ButtonProps) => {
+    const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
     return (
-        <button type="button" onClick={onClick} className={className}>
-            {loading ? <>Loading</> : children}
+        <button
+            type="button"
+            className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+            style={{ backgroundColor }}
+            {...props}
+        >
+            {label}
         </button>
     );
 };
-
-export default React.forwardRef<unknown, ButtonProps>(Button);
