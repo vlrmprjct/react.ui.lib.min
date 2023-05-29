@@ -1,6 +1,6 @@
 {
     "name": "@vlrm/library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "React TypeScript UI Library NPM Package Minimal Setup",
     "author": "Thmomas Meschke @vlrmprjct",
     "private": false,
