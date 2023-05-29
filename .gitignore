@@ -8,7 +8,7 @@ node_modules
 /build
 /lib
 /dist
-dist
+/storybook-static
 
 # misc
 /.cache
