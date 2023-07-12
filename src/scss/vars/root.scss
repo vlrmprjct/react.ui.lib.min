@@ -1,0 +1,11 @@
+@mixin spread-map-colors($map: ()) {
+    @each $key, $value in $map {
+        #{$key}: $value;
+    }
+}
+
+:root,
+::backdrop {
+    @include spread-map-colors($variants);
+    @include spread-map-colors($theme);
+}

@@ -5,7 +5,7 @@ const config: StorybookConfig = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
-        '@storybook/addon-mdx-gfm'
+        'storybook-dark-mode',
     ],
     core: {
         disableTelemetry: true,
@@ -20,7 +20,6 @@ const config: StorybookConfig = {
     },
     stories: [
         '../../src/**/*.mdx',
-        '../../src/**/*.stories.@(js|jsx|ts|tsx)'
     ],
     webpackFinal: async (config :any, { configType }) => {
 
@@ -32,6 +31,11 @@ const config: StorybookConfig = {
                     {
                         loader: 'css-loader',
                         options: {
+                            modules: {
+                                mode: 'local',
+                                localIdentName: '[local]',
+                                namedExport: true,
+                            },
                             url: false,
                             sourceMap: true,
                         },
@@ -48,12 +52,12 @@ const config: StorybookConfig = {
                     //         sourceMap: true,
                     //     },
                     // },
-                    // {
-                    //     loader: 'sass-resources-loader',
-                    //     options: {
-                    //         resources: './src/scss/base.scss',
-                    //     },
-                    // },
+                    {
+                        loader: 'sass-resources-loader',
+                        options: {
+                            resources: './src/scss/base.scss',
+                        },
+                    },
                 ],
             },
         );
