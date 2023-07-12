@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin spread-map-colors($map: ()) {
     @each $key, $value in $map {
         #{$key}: $value;

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Button.scss';
-import { prefix } from './../../scss/vars/export.scss';
 
 export interface ButtonProps {
     backgroundColor?: string;
@@ -17,7 +16,7 @@ export const Button = ({
     return (
         <button
             type="button"
-            className={`${prefix}button`}
+            className={`ui-button`}
             style={{ backgroundColor }}
             {...props}
         >
