@@ -2,7 +2,7 @@
     "name": "@namespace/name",
     "version": "1.0.4",
     "description": "React TypeScript UI Library NPM Package Minimal Setup",
-    "author": "Thmomas Meschke",
+    "author": "Thomas Meschke <mail@lokalnetz.com>",
     "private": false,
     "license": "ISC",
     "keywords": [
