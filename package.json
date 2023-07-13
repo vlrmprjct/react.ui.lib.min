@@ -1,8 +1,8 @@
 {
-    "name": "@vlrm/library",
+    "name": "@namespace/name",
     "version": "1.0.3",
     "description": "React TypeScript UI Library NPM Package Minimal Setup",
-    "author": "Thmomas Meschke @vlrmprjct",
+    "author": "Thmomas Meschke",
     "private": false,
     "license": "ISC",
     "keywords": [
@@ -23,17 +23,17 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/vlrmprjct/react.ui.lib.min.git"
-    },
-    "bugs": {
-        "url": "https://github.com/vlrmprjct/react.ui.lib.min/issues",
-        "email": "mail@lokalnetz.com"
+        "url": ""
     },
     "scripts": {
         "build": "rm -rf dist && rm -rf *.tgz && webpack --config config/webpack.config.js",
         "build-storybook": "storybook build --config-dir config/storybook",
         "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
         "start": "storybook dev -p 6006 --ci -c config/storybook watch-css"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.22.9",
