@@ -1,4 +1,4 @@
 import './scss/export.scss';
 
-import { Button } from './components';
-export { Button };
+export { Button } from './components/Button/Button';
+export type { ButtonProps } from './components/Button/Button';
