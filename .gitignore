@@ -1,5 +1,5 @@
 # dependencies
-node_modules
+/node_modules
 
 # testing
 /coverage
@@ -12,3 +12,7 @@ node_modules
 
 # misc
 /.cache
+
+# ide
+/.vscode
+/.idea

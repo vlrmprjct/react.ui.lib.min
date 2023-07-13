@@ -1,0 +1,29 @@
+// UI package internal usage
+@import './../../src/scss/base';
+@import './../../src/scss/export';
+
+@mixin spread-map-colors($map: ()) {
+    @each $key, $value in $map {
+        #{$key}: $value;
+    }
+}
+
+:root {
+    &.theme {
+        &-dark {
+            @include spread-map-colors($themeDark);
+
+            ::backdrop {
+                @include spread-map-colors($themeDark);
+            }
+        }
+        &-light {
+            @include spread-map-colors($theme);
+        }
+    }
+
+    .sb-show-main,
+    .docs-story {
+        background: var(--background-primary);
+    }
+}

@@ -1,0 +1,34 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Button, ButtonDefaults } from './Button';
+
+<Meta
+    component={Button}
+    title='Buttons/Button'
+/>
+
+{/* Component template */}
+export const Template = args => <Button {...args} />;
+
+{/* Component control-tab types */}
+export const argTypes = { };
+
+{/* Component defaults control args */}
+export const argsDefault = {
+    ...ButtonDefaults,
+};
+
+{/* Component documentation */}
+# Button
+- [Overview](#overview)
+- [Props](#props)
+
+## Overview
+
+<Canvas>
+    <Story args={argsDefault} argTypes={argTypes} name='Overview'>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+## Props
+<ArgsTable of={Button} />

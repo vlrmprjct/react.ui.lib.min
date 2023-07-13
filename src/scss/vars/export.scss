@@ -1,0 +1,24 @@
+/* stylelint-disable property-no-unknown */
+/* stylelint-disable selector-pseudo-class-no-unknown */
+
+/*
+Export (s)css to javascript props
+Expected usage example in JS:
+
+* Some single props
+import { prefix, primary } from './path/to/this/file/export.scss';
+console.log(prefix) // Output: 'ui-'
+
+* All avialable props
+import * as someVars from './path/to/this/file/export.scss';
+console.log(someVars) // Output: {prefix: 'ui-', primary: "#36BA9A' ... }
+
+*/
+
+:export {
+    prefix: unquote($prefix);
+
+    @each $key, $value in $variants {
+        #{unquote(str-slice($key, 3, -1))}: $value;
+    }
+}
