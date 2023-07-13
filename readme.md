@@ -1,5 +1,9 @@
 # React Storybook UI Component Library
 
+## Preparing:
+1. Fork or clone this repository to a new repository
+2. Rename the package `@namespace/name` that fits your need
+
 ## Installation:
 
 1. `npm ci`
